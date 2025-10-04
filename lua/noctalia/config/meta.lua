@@ -1,0 +1,56 @@
+---@alias CodeStyle "none"|"italic"|"bold"
+---@class Noctalia.style
+---@field boolean? CodeStyle
+---@field number? CodeStyle
+---@field float? CodeStyle
+---@field error? CodeStyle
+---@field comments? CodeStyle
+---@field conditionals? CodeStyle
+---@field functions? CodeStyle
+---@field headings? CodeStyle
+---@field operators? CodeStyle
+---@field strings? CodeStyle
+---@field variables? CodeStyle
+---@field keywords? CodeStyle
+---@field keyword_return? CodeStyle
+---@field keywords_loop? CodeStyle
+---@field keywords_label? CodeStyle
+---@field keywords_exception? CodeStyle
+---@field builtin_constants? CodeStyle
+---@field builtin_functions? CodeStyle
+---@field builtin_types? CodeStyle
+---@field builtin_variables? CodeStyle
+
+---@class Noctalia.plugins.cmp
+---@field match? CodeStyle
+---@field match_fuzzy? CodeStyle
+---@class Noctalia.plugins.dashboard
+---@field footer? CodeStyle
+---@class Noctalia.plugins.telescope
+---@field match? CodeStyle
+---@class Noctalia.plugins.neotest
+---@field focused? CodeStyle
+---@field adapter_name? CodeStyle
+---@class Noctalia.plugins.lsp
+---@field diagnostic_error? CodeStyle
+---@field diagnostic_hint? CodeStyle
+---@field diagnostic_info? CodeStyle
+---@field diagnostic_ok? CodeStyle
+---@field diagnostic_warn? CodeStyle
+---@class Noctalia.plugins
+---@field cmp? Noctalia.plugins.cmp
+---@field telescope? Noctalia.plugins.telescope
+---@field dashboard? Noctalia.plugins.dashboard
+---@field neotest? Noctalia.plugins.neotest
+---@field lsp? Noctalia.plugins.lsp
+---@class Noctalia.Config
+---@field transparent? boolean
+---@field bold? boolean
+---@field italic? boolean
+---@field style? Noctalia.style
+---@field colors? table<string,string>
+---@field plugins? Noctalia.plugins
+---@field on_highlights? fun(hls: table<string, vim.api.keyset.highlight>, colors: table)
+
+---@type Noctalia.Config | fun():Noctalia.Config | nil
+vim.g.noctalia = vim.g.noctalia
