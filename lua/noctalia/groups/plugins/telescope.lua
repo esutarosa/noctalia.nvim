@@ -1,11 +1,12 @@
 local util = require("noctalia.util")
-local cfg = require("noctalia.config.internal")
+---@param p Noctalia.Palette
 return function(p)
 	return {
-		TelescopeBorder = { fg = p.mOutline, bg = p.mSurfaceVariant },
-		TelescopeTitle = util.h("bold", p.mPrimary),
 		TelescopeNormal = { fg = p.mOnSurface, bg = p.mSurfaceVariant },
-		TelescopeMatching = util.h(cfg.current.plugins.telescope.match, p.mPrimary),
+		TelescopeBorder = { fg = p.mOutline, bg = p.mSurfaceVariant },
+		TelescopePromptBorder = { fg = p.mOutline, bg = p.mSurfaceVariant },
+		TelescopeTitle = util.h("bold", p.mPrimary),
 		TelescopeSelection = { bg = p.mSurfaceVariant, fg = p.mOnSurface },
+		TelescopeMatching = util.h("bold", p.mSecondary),
 	}
 end
